@@ -26,12 +26,17 @@ add_subdirectory(picoquic)
 add_executable(quicxcache xcache.cc)
 add_dependencies(quicxcache xia)
 
+# XIA source directory
 set(XIADIR ${CMAKE_SOURCE_DIR}/build/xia-prefix/src/xia)
+
+# QUIC source directory
 set(PICOQUICDIR ${CMAKE_SOURCE_DIR}/picoquic)
-# XIA includes added to quicxcache
+
+# XIA and QUIC headers added to quicxcache
 include_directories(quicxcache ${XIADIR}/api/include)
 include_directories(quicxcache ${XIADIR}/api/xcache)
 include_directories(quicxcache ${PICOQUICDIR}/picoquic)
+
 # XIA libraries added to quicxcache
 find_library(DAG_LIBRARY dagaddr HINTS ${XIADIR}/api/lib)
 find_library(XCACHE_HEADERS_LIBRARY xcachehdr HINTS ${XIADIR}/api/lib)
