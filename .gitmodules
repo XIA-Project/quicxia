@@ -1,0 +1,7 @@
+[submodule "picotls"]
+	path = picotls
+	url = git@github.com:h2o/picotls.git
+[submodule "picoquic"]
+	path = picoquic
+	url = git@github.com:XIA-Project/picoquic.git
+	branch = master
